@@ -30,8 +30,9 @@ if (!isProduction) {
   app.use(errorhandler());
 }
 
+const MONGO_URI = "mongodb+srv://ianbalijawa:3X2qt8NT6iPWLsEm@cluster0.fl3nd.mongodb.net/?retryWrites=true&w=majority";
 if(isProduction){
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(MONGO_URI);
 } else {
   mongoose.connect('mongodb://localhost/conduit');
   mongoose.set('debug', true);
